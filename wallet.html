@@ -16,15 +16,13 @@
     </div>
     
     <div class="box">
-        <h1>WALLET Generator for ETH</h1><br>
+        <h1 style="color: brown;">WALLET Generator for ETH</h1><br>
         <div id="mnemonic">
-            <h3>Mnemonic Phrases:</h3>
+            <button id="btn-ph">Generate Phrase</button><br><br>
+
             <p id="phrase" style="color: rgb(34, 114, 114);" ></p><br>
-            <h5>Step 1 - Click on Generate Phrase button to generate the seed phrase for your wallet </h5><br>
-            <button id="btn-ph">Generate Phrase</button><br>
         </div>
-        <br>
-        <h5>Step 2 - Once the phrase is generated click on Create Wallet button to finally create your own Crypto Wallet</h5>
+        
         <div id="pub-pri">
             <button id="btn-wallet">Create Wallet</button>
             <h3>Public key:</h3>
@@ -40,6 +38,7 @@
         
         
     </div>
+    <div class="box1">
     <div class="SendEth">            
         <h1 style="color: purple;">Send your Crypto to another Wallet</h1>
         <h3>Destination Address:</h3>
@@ -48,6 +47,7 @@
         <input class="address-input" placeholder="0 ETH"><br>
         <button id="btn-send">Send ETH</button><br>
     </div>
+</div>
     <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bip39/3.0.4/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
