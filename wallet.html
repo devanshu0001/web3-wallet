@@ -19,7 +19,7 @@
         <h1>WALLET Generator for ETH</h1><br>
         <div id="mnemonic">
             <h3>Mnemonic Phrases:</h3>
-            <p id="phrase"></p><br>
+            <p id="phrase" style="color: rgb(34, 114, 114);" ></p><br>
             <h5>Step 1 - Click on Generate Phrase button to generate the seed phrase for your wallet </h5><br>
             <button id="btn-ph">Generate Phrase</button><br>
         </div>
@@ -27,28 +27,26 @@
         <h5>Step 2 - Once the phrase is generated click on Create Wallet button to finally create your own Crypto Wallet</h5>
         <div id="pub-pri">
             <button id="btn-wallet">Create Wallet</button>
-            <button id="btn-wallet">Recover Wallet</button><br><br>
             <h3>Public key:</h3>
-            <p id="public-key"></p>
-            <button id="btn-copy-public">Copy Public Key</button><br>
+            <p id="public-key" style="color: rgb(34, 114, 114);" ></p>
             <div id="qr-section">
                 <button id="btn-qr">Generate QR Code for Public Key</button><br>
                 <div id="qrcode"></div>
             </div>
             <h3>Private key:</h3>
-            <p id="private-key"></p>
-            <button id="btn-copy-private">Copy Private Key</button>
+            <p id="private-key" style="color: rgb(34, 114, 114);"></p>
 
         </div><br>
-        <div class="SendEth">            
-            <h1 style="color: purple;">Send your Crypto to another Wallet</h1>
-            <h3>Destination Address:</h3>
-            <input class="address-input" placeholder="Enter Address"><br><br>
-            <h3>Amount:</h3>
-            <input class="address-input" placeholder="0 ETH"><br>
-            <button id="btn-send">Send ETH</button><br>
-        </div>
         
+        
+    </div>
+    <div class="SendEth">            
+        <h1 style="color: purple;">Send your Crypto to another Wallet</h1>
+        <h3>Destination Address:</h3>
+        <input class="address-input" placeholder="Enter Address"><br><br>
+        <h3>Amount:</h3>
+        <input class="address-input" placeholder="0 ETH"><br>
+        <button id="btn-send">Send ETH</button><br>
     </div>
     <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bip39/3.0.4/index.js"></script>

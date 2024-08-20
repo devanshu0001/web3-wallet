@@ -33,13 +33,13 @@ document.getElementById("btn-wallet").addEventListener("click", function() {
     });
 
 
-document.getElementById('btn-copy-public').addEventListener('click', () => {
+document.getElementById('public-key').addEventListener('click', () => {
     const publicKey = document.getElementById('public-key').innerText;
     navigator.clipboard.writeText(publicKey);
     alert('Public key copied to clipboard!');
 });
 
-document.getElementById('btn-copy-private').addEventListener('click', () => {
+document.getElementById('private-key').addEventListener('click', () => {
     const privateKey = document.getElementById('private-key').innerText;
     navigator.clipboard.writeText(privateKey);
     alert('Private key copied to clipboard!');

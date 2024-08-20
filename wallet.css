@@ -47,12 +47,13 @@ body {
     display: inline-block; /* Keeps the element inline while allowing it to be centered */
 }
 
-#phrase {
+#phrase, #private-key, #public-key{
     cursor: pointer;
     user-select: text; /* Allows text selection for copying */
     border: 1px dashed #ccc; /* Optional: Adds a border to make it stand out */
     padding: 5px;
 }
+
 
 h3 {
     color: #333;
