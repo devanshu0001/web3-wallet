@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wallet.css">
+    <title>Web3 Wallet</title>
+    
+</head>
+<body>
+    <div class="theme-toggle">
+        <input type="checkbox" id="toggle-dark-mode">
+        <label for="toggle-dark-mode">
+            <span>🌙</span>
+        </label>
+    </div>
+    
+    <div class="box">
+        <h1>WALLET Generator for ETH</h1><br>
+        <div id="mnemonic">
+            <h3>Mnemonic Phrases:</h3>
+            <p id="phrase"></p><br>
+            <h5>Step 1 - Click on Generate Phrase button to generate the seed phrase for your wallet </h5><br>
+            <button id="btn-ph">Generate Phrase</button><br>
+        </div>
+        <br>
+        <h5>Step 2 - Once the phrase is generated click on Create Wallet button to finally create your own Crypto Wallet</h5>
+        <div id="pub-pri">
+            <button id="btn-wallet">Create Wallet</button>
+            <button id="btn-wallet">Recover Wallet</button><br><br>
+            <h3>Public key:</h3>
+            <p id="public-key"></p>
+            <button id="btn-copy-public">Copy Public Key</button><br>
+            <div id="qr-section">
+                <button id="btn-qr">Generate QR Code for Public Key</button><br>
+                <div id="qrcode"></div>
+            </div>
+            <h3>Private key:</h3>
+            <p id="private-key"></p>
+            <button id="btn-copy-private">Copy Private Key</button>
+
+        </div><br>
+        <div class="SendEth">            
+            <h1 style="color: purple;">Send your Crypto to another Wallet</h1>
+            <h3>Destination Address:</h3>
+            <input class="address-input" placeholder="Enter Address"><br><br>
+            <h3>Amount:</h3>
+            <input class="address-input" placeholder="0 ETH"><br>
+            <button id="btn-send">Send ETH</button><br>
+        </div>
+        
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bip39/3.0.4/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script type="module" src="wallet.js"></script>
+    <script>
+        const toggleDarkMode = document.getElementById('toggle-dark-mode');
+        const body = document.body;
+
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            toggleDarkMode.checked = true;
+        }
+
+        toggleDarkMode.addEventListener('change', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+</body>
+</html>
