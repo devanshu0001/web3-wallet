@@ -10,16 +10,31 @@ function generateWallet() {
     };
 }
 
-document.getElementById("btn-ph").addEventListener("click", function() {
+
+
+
+document.getElementById("btn-eth-wallet").addEventListener("click", function() {
+    const wallet = generateWallet();
     const mnemonic = generateMnemonic();
     document.getElementById("phrase").innerText = mnemonic;
-});
-
-
-document.getElementById("btn-wallet").addEventListener("click", function() {
-    const wallet = generateWallet();
     document.getElementById("public-key").innerText = wallet.publicKey;
     document.getElementById("private-key").innerText = wallet.privateKey;
+
+    document.getElementById('eth-wallet').style.display = 'block';
+    document.getElementById('sol-wallet').style.display = 'none';
+});
+document.getElementById('btn-sol-wallet').addEventListener('click', async () => {
+    const newAccount = new solanaWeb3.Keypair(); // Create a new Solana wallet
+    
+    const publicKey = newAccount.publicKey.toString();
+    const privateKey = newAccount.secretKey.toString();
+
+    // Display the public and private keys in the HTML
+    document.getElementById('sol-public-key').textContent = publicKey;
+    document.getElementById('sol-private-key').textContent = privateKey;
+
+    document.getElementById('sol-wallet').style.display = 'block';
+    document.getElementById('eth-wallet').style.display = 'none';
 });
     document.getElementById('phrase').addEventListener('click', () => {
         const mnemonicText = document.getElementById('phrase').innerText;
@@ -52,3 +67,5 @@ document.getElementById('btn-qr').addEventListener('click', () => {
         alert('Please generate a wallet first.');
     }
 });
+
+
